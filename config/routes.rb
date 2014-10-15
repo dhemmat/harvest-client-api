@@ -1,5 +1,5 @@
 HarvestClientApi::Application.routes.draw do
-  mount HarvestClientAPI::APIv1 => '/v1'
+  mount ApiV1 => '/v1'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
