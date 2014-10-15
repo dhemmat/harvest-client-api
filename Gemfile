@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'grape', '~> 0.9.0'
 
+gem 'therubyracer'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
