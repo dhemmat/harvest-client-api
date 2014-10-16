@@ -1,3 +1,5 @@
+
+
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
@@ -8,6 +10,12 @@ Bundler.require(*Rails.groups)
 
 module HarvestClientApi
   class Application < Rails::Application
+    config.paths.add "app/api", glob: "**/*.rb"
+    config.autoload_paths += Dir["#{Rails.root}/app"]
+    # config.paths.add "app/api", glob: "**/*.rb"
+    # config.autoload_paths += Dir["#{Rails.root}/app"]
+    # config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
+    # config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
@@ -20,7 +28,6 @@ module HarvestClientApi
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
-    config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
+    
   end
 end
