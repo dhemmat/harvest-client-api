@@ -12,7 +12,3 @@ module HarvestClientApi
     config.autoload_paths += Dir["#{Rails.root}/app"]    
   end
 end
-
-git filter-branch --force --index-filter \
-'git rm --cached --ignore-unmatch confing/harvest_config.yml' \
---prune-empty --tag-name-filter cat -- --all
