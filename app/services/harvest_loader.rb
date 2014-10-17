@@ -1,7 +1,5 @@
 class HarvestLoader
-
-  def getHarvestInstance
-    Harvest.client(HARVEST_CONFIG["subdomain"], HARVEST_CONFIG["username"], HARVEST_CONFIG["password"])
+  def self.getHarvestInstance
+    Harvest.client(subdomain: HARVEST_CONFIG["subdomain"], username: HARVEST_CONFIG["username"], password: HARVEST_CONFIG["password"])
   end
-  
 end
