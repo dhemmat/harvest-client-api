@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :authentication_token, presence: true
+  validates :harvest_client_id, presence: true
 
   before_validation do
     ensure_authentication_token

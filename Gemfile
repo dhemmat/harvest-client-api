@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'grape', '~> 0.9.0'
 
+gem 'grape-rabl'
+
 gem 'therubyracer'
 
 gem 'harvested', '~> 3.1.0'
