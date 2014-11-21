@@ -9,7 +9,7 @@ module API
 
       resource :projects do
         desc "Return list of projects for client"
-        get '', :rabl => "projects" do
+        get '', :rabl => "v1/projects" do
           @projects = @harvest.projects.all(nil, :client => current_user.harvest_client_id)
         end
       end
