@@ -4,6 +4,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates :authentication_token, presence: true
+
+  before_validation do
+    ensure_authentication_token
+  end
+
   def ensure_authentication_token
     self.authentication_token ||= generate_authentication_token
   end
