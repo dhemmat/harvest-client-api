@@ -37,6 +37,8 @@ gem 'harvested', '~> 3.1.0'
 
 gem 'devise', '~> 3.4.0'
 
+gem 'draper', '~> 1.3'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
