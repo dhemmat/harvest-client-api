@@ -18,6 +18,7 @@ module API
         get ':project_id/tasks' do
           #TODO: Only allow projects available for current user.
           project = @harvest.projects.find(params[:project_id])
+          error!('Unauthorized', 401) unless @harvest.client_has_project?(current_user, project.id)
           @tasks = @harvest.tasks_by_projects(project)
         end
 

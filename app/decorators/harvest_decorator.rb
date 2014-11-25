@@ -19,6 +19,12 @@ class HarvestDecorator < Draper::Decorator
     self.projects.all(nil, :client => client.harvest_client_id)
   end
 
+  def client_has_project? client, project_id
+    projects_by_client(client).map do |project|
+      project.id == project_id
+    end.any?
+  end
+
   private
 
   def tasks_ids_by_projects projects
