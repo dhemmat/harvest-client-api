@@ -11,15 +11,8 @@ module API
 
         desc "Return tasks for client"
         get '', :rabl => "v1/tasks" do
-          if params[:project_id].present?
-            #TODO: Only allow projects available for current user.
-            project = @harvest.projects.find(params[:project_id])
-            @tasks = @harvest.tasks_by_projects(project)
-          else
-            @tasks = @harvest.tasks_by_client(current_user)
-          end
+          @tasks = @harvest.tasks_by_client(current_user)
         end
-
       end
     end
   end
