@@ -1,6 +1,12 @@
 class HarvestDecorator < Draper::Decorator
   delegate_all
 
+  def entries_by_client client, start_date, end_date
+    projects_by_client(client).map do |project|
+      reports.time_by_project(project, start_date, end_date)
+    end.flatten
+  end
+
   def tasks_by_client client
     projects = self.projects_by_client(client)
     tasks_by_projects(projects)
