@@ -39,10 +39,16 @@ gem 'devise', '~> 3.4.0'
 
 gem 'draper', '~> 1.3'
 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
